@@ -1,4 +1,9 @@
-	public enum Ball {
+/* 
+ * Name: Enda Kilgarriff
+ * Student ID: 17351606
+ */
+
+public enum Ball {
 		BASEBALL(149, 73), 
 		BASKETBALL(624, 239), 
 		FOOTBALL(450, 216),

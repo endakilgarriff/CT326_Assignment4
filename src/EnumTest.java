@@ -1,3 +1,8 @@
+/* 
+ * Name: Enda Kilgarriff
+ * Student ID: 17351606
+ */
+
 import java.text.DecimalFormat;
 
 public class EnumTest {
@@ -14,10 +19,8 @@ public class EnumTest {
 		}
 
 		System.out.println("\nTask 2");
-		System.out.println(Ball.GOLFBALL.name() + " circumference \t"
-				+ precision.format(Ball.GOLFBALL.getCircumference()) + " mm");
-		System.out
-				.println(Ball.BASEBALL.name() + " diameter \t" + precision.format(Ball.BASEBALL.getVolume()) + " m^3");
+		System.out.println(Ball.GOLFBALL.name() + " circumference \t" + precision.format(Ball.GOLFBALL.getCircumference()) + " mm");
+		System.out.println(Ball.BASEBALL.name() + " diameter \t" + precision.format(Ball.BASEBALL.getVolume()) + " m^3");
 
 	}
 }
