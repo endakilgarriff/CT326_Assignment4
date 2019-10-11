@@ -15,11 +15,14 @@ public class Rational {
 			throw new ArithmeticException("Denominator is zero");
 		}
 
-		int g = simpleFraction(num, den);
-		this.num = num / g;
-		this.den = den / g;
+		this.num = num;
+		this.den = den;
+		
+//		int g = gcd(num, den);
+//		this.num = num / g;
+//		this.den = den / g;
 	}
-
+	
 	public int getNumerator() {
 		return num;
 	}
@@ -52,10 +55,17 @@ public class Rational {
 		return new Rational((a.num * b.den - b.num * a.den), (a.den * b.den));
 	}
 
-	static int simpleFraction(int a, int b) {
+	static int gcd(int a, int b) {
 		if (a == 0 || b == 0)
 			return a + b;
-		return simpleFraction(b, a % b);
+		return gcd(b, a % b);
+	}
+	
+	public Rational reducedFraction() {
+		int temp = gcd(num, den);
+		num = num/temp;
+		den = den/temp;
+		return this;
 	}
 
 	public double asDouble() {
@@ -64,7 +74,7 @@ public class Rational {
 
 	@Override
 	public String toString() {
-		return " ";
+		return this.num + "/" + this.den;
 	}
 
 }

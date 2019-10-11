@@ -13,18 +13,18 @@ public enum Ball {
 		TENNISBALL(59, 64),
 		VOLLEYBALL(260, 218);
 		
-		private final double mass, diameter; // In grams
+		private final int mass, diameter; // In grams
 		private double radius; 
 		
-		Ball(double mass, double diameter) {
+		Ball(int mass, int diameter) {
 			this.mass = mass;
 			this.diameter = diameter;
 			radius = diameter/2;
 			
 		}
 		
-		public double mass() { return mass; }
-		public double diameter() { return diameter; }
+		public int mass() { return mass; }
+		public int diameter() { return diameter; }
 		
 		public double getCircumference() {
 			return 2.0*Math.PI*radius;
