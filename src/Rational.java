@@ -3,16 +3,22 @@
  * Student ID: 17351606
  */
 
-// Source: https://introcs.cs.princeton.edu/java/92symbolic/Rational.java.html
-
 public class Rational {
 
 	// Initialize variables
-	private int num, den;
+	private int num, den = 1;
 
 	public Rational(int num, int den) {
-		this.num = num;
-		this.den = den;
+
+		// If the denominator is 0 lets ratio become just be an integer. e.g 5/1 =5
+		if (den == 0) {
+			this.den = 1;
+			this.num = num;
+		} else {
+			this.num = num;
+			this.den = den;
+		}
+
 	}
 
 	// Accessor methods
@@ -55,30 +61,36 @@ public class Rational {
 		return new Rational((a.num * b.den - b.num * a.den), (a.den * b.den));
 	}
 
+	// Recursive function finds the greatest common divisor between numerator and
+	// denominator
 	static int gcd(int a, int b) {
 		if (a == 0 || b == 0)
 			return a + b;
 		return gcd(b, a % b);
 	}
-	
-	
-	// Returns the simplest form of Rational object 
+
+	// Returns the simplest form of Rational object
 	public Rational reducedFraction() {
 		int temp = gcd(num, den);
 		num = num / temp;
 		den = den / temp;
 		return this;
 	}
-	
-	
+
 	// Returns the ratio as a double
 	public double asDouble() {
 		return (double) num / den;
 	}
-	
+
 	@Override
 	public String toString() {
 		return this.num + "/" + this.den;
 	}
 
 }
+
+/*
+ * SOURCES: -
+ * https://introcs.cs.princeton.edu/java/92symbolic/Rational.java.html -
+ * https://www.youtube.com/watch?v=AsKeji13m4U
+ */

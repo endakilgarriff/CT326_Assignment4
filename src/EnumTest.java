@@ -14,7 +14,7 @@ public class EnumTest {
 	public static void main(String args[]) {
 
 		// Creating array of all Balls in enum
-		System.out.println("Task 1");
+		System.out.println("Enda Kilgarriff - 17351606 Assignment4\nTask 1");
 		Ball arr[] = Ball.values();
 
 		// Printing details about all declared balls
@@ -27,7 +27,7 @@ public class EnumTest {
 		System.out.println(Ball.GOLFBALL.name() + " circumference \t"
 				+ precision.format(Ball.GOLFBALL.getCircumference()) + " mm");
 		System.out
-				.println(Ball.BASEBALL.name() + " diameter \t" + precision.format(Ball.BASEBALL.getVolume()) + " m^3");
+				.println(Ball.BASEBALL.name() + " volume \t" + precision.format(Ball.BASEBALL.getVolume()) + " mm^3");
 
 		// Rational objects created using attributes of balls (r0 is not declared from
 		// Ball enum)
@@ -54,6 +54,6 @@ public class EnumTest {
 	// Reduces typing necessary and makes test class neater
 	public static void printFormat(Rational m, Rational n, String operation, Rational answer) {
 		System.out.println(
-				"(" + m + ") " + operation + " (" + n + ") = " + answer + " = " + precision.format(answer.asDouble()));
+				"(" + m + ") " + operation + " (" + n + ") = " + answer.reducedFraction().toString() + " = " + precision.format(answer.asDouble()));
 	}
 }

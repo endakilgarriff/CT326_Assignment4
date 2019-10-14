@@ -16,7 +16,7 @@ public enum Ball {
 	Ball(int mass, int diameter) {
 		this.mass = mass;
 		this.diameter = diameter;
-		radius = diameter / 2;
+		radius = diameter / 2.0;
 
 	}
 
@@ -37,7 +37,7 @@ public enum Ball {
 
 	// Maths to get volume of sphere
 	public double getVolume() {
-		return (4.0 * Math.PI * radius) / 3.0;
+		return (4*Math.PI*Math.pow(radius,3))/3 ;  
 	}
 
 	@Override
